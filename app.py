@@ -27,7 +27,7 @@ def tweet_gen():
 
 #implementation where user can generate as many words as they want
 @app.route('/words/<int:num>')
-def tweet_gen(num):
+def tweet_gen2(num):
     histo_text = get_words('siddhartha.txt')
     clean_text = get_tokens(histo_text)
     histo = histogram(clean_text)
