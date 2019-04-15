@@ -4,32 +4,14 @@ def get_words(file):
     words_list = []
     with open(file) as f:  # access file
         #access each line of file
-        text = f.read()
-        # for line in f:
-        #     #splits line into list of words
-        #     text = line.split()
-        #     for word in text: #accessing each word
-        #         word.strip() #strips trailing/leading chars
-        #         words_list.append(word) #appending words to list
-    return text
+        for line in f:
+            #splits line into list of words
+            text = line.split()
+            for word in text: #accessing each word
+                word.strip() #strips trailing/leading chars
+                words_list.append(word) #appending words to list
+    return words_list
 
-#split text into word tokens
-from nltk import word_tokenize
-import string
-from nltk.corpus import stopwords
-
-def get_tokens(text):
-    #split text into word tokens
-    tokens = word_tokenize(text)
-    #converts tokens to lowercase
-    tokens = [word.lower() for word in tokens]
-    #removes punctuation from each word
-    table = str.maketrans('', '', string.punctuation) 
-    stripped = [w.translate(table) for w in tokens]
-    #remove non-alphabetic tokens
-    words = [word for word in stripped if word.isalpha()]
-
-    return words
 
 ''' 
 Dictionary Implementation of Histogram
@@ -155,9 +137,8 @@ def tuplegram(text):
 
 if __name__ == '__main__':
     histo_text = get_words('siddhartha.txt')
-    clean_text = get_tokens(histo_text)
-    histo = histogram(clean_text)
-    # print(histo)
+    histo = histogram(histo_text)
+    print(histo)
     # sorted_histo = sorter(histo)
     # print(sorted_histo)
     
@@ -167,8 +148,8 @@ if __name__ == '__main__':
     # print(unique_words(histo))
     # print(frequency('he', histo))
 
-    listo = listogram(clean_text)
-    print(listo)
+    # listo = listogram(clean_text)
+    # print(listo)
     # print(unique_words(listo))
     # print(frequency('fish', listo))
 
