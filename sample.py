@@ -5,7 +5,6 @@ import sys
 #importing functions from histogram file
 from histogram import histogram
 from histogram import get_words
-from histogram import get_tokens
 from histogram import listogram
 
 def print_probability(histogram):
@@ -88,8 +87,7 @@ def list_sampling(listogram):
 if __name__ == '__main__':
     #using histogram functions to get corpus
     histo_text = get_words('fish.txt')
-    clean_text = get_tokens(histo_text)
-    histo = histogram(clean_text)
+    histo = histogram(histo_text)
 
     #sampling using dictionary method
     sample_word = sample(histo)
