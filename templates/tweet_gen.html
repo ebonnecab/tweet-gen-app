@@ -9,6 +9,10 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <h1>Tweet Generator</h1>
+    <h1>Example Tweet Generator</h1>
+    <p>Siddartha says, "{{ quote }}"</p>
+    <form action="{{ url_for('tweet_gen') }}">
+        <input type="submit" value="Generate Tweet" />
+    </form>
 </body>
 </html>
