@@ -6,26 +6,33 @@ import sys
 from histogram import histogram
 from histogram import get_words
 from histogram import listogram
+from histogram import unique_words
+
+def total_freq(histogram):
+    total_freq = sum(histogram.values())
+
+    return total_freq
 
 def print_probability(histogram):
 
-    #gets total count of unique words
-    total_freq = sum(histogram.values())
+    #gets total count of words
+    total = total_freq(histogram)
    
     #prints out probability of word being picked
     for word, freq in histogram.items():
-        print("{} = {}".format(word,freq/total_freq))
+        print("{} = {}".format(word,freq/total))
+
 
 def sample(histogram):
     #gets total count of unique words
-    total_freq = sum(histogram.values())
+    total = total_freq(histogram)
     #creating chance variable for random sampling
     chance = 0
     random_num = random.uniform(0,1)
     
     #returns random sample word
     for word in histogram:
-        chance += histogram[word]/total_freq
+        chance += histogram[word]/total
         if chance >= random_num:
             return word
 
@@ -81,19 +88,22 @@ def list_sampling(listogram):
             return index[0]
 
 if __name__ == '__main__':
+    
     #using histogram functions to get corpus
     histo_text = get_words('siddhartha.txt')
     histo = histogram(histo_text)
+    test = total_freq(histo)
+    print(test)
 
     #sampling using dictionary method
     sample_word = sample(histo)
-    # probability = print_probability(histo)
-    # print(sample_word)
+    probability = print_probability(histo)
+    print(sample_word)
 
     #testing that sampling function actually works
-    outcomes = test_probability(histo)
-    results = results_histogram(outcomes)
-    print(results)
+    # outcomes = test_probability(histo)
+    # results = results_histogram(outcomes)
+    # print(results)
 
     #list implementation of sampling
     # listo = listogram(clean_text)
