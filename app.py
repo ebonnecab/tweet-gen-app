@@ -1,11 +1,5 @@
 from flask import Flask, render_template
 from generator import sentence_gen
-# from histogram import histogram
-# from histogram import histogram
-# from histogram import get_words
-# from histogram import listogram
-# from sample import sample
-# from rearrange import sentence_maker
 
 HTML="""<html><head><title>My App</title></head>
         <body><h2>{}</h2></body>"""
@@ -19,16 +13,6 @@ def home():
 def tweet_gen():
     sentence = sentence_gen()
     return render_template('tweet_gen.html', quote = sentence)
-# @app.route('/words')
-# def tweet_gen():
-#     histo_text = get_words('siddhartha.txt')
-#     histo = histogram(histo_text)
-#     random_word = sample(histo)
-#     random_words = []
-#     for i in range(7):
-#         random_words.append(sample(histo))
-#     random_sentence = sentence_maker(random_words)
-#     return HTML.format(random_sentence)
 
 #implementation where user can generate as many words as they want
 # @app.route('/words/<int:num>')

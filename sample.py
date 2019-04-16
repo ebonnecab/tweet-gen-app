@@ -45,11 +45,7 @@ def results_histogram(outcomes):
     results = {}
 
     for word in outcomes:
-        if word in results:
-            results[word] +=1
-        else:
-            results[word] = 1
-    
+        results = histogram(outcomes)
     return results
 
 '''
@@ -86,18 +82,18 @@ def list_sampling(listogram):
 
 if __name__ == '__main__':
     #using histogram functions to get corpus
-    histo_text = get_words('fish.txt')
+    histo_text = get_words('siddhartha.txt')
     histo = histogram(histo_text)
 
     #sampling using dictionary method
     sample_word = sample(histo)
-    probability = print_probability(histo)
+    # probability = print_probability(histo)
     # print(sample_word)
 
     #testing that sampling function actually works
-    # outcomes = test_probability(histo)
-    # results = results_histogram(outcomes)
-    # print(results)
+    outcomes = test_probability(histo)
+    results = results_histogram(outcomes)
+    print(results)
 
     #list implementation of sampling
     # listo = listogram(clean_text)

@@ -1,5 +1,4 @@
 import random
-
 def get_words(file):
     words_list = []
     with open(file) as f:  # access file
