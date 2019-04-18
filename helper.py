@@ -1,5 +1,5 @@
 from word_count import histogram
-from word_count import get_words
+from get_words import get_words
 from sample import sample
 from sentence import sentence_maker
 
