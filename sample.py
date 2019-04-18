@@ -3,10 +3,8 @@ import random
 import sys
 
 #importing functions from histogram file
-from histogram import histogram
-from histogram import get_words
-from histogram import listogram
-from histogram import unique_words
+from word_count import histogram
+from word_count import get_words
 
 def total_freq(histogram):
     total_freq = sum(histogram.values())

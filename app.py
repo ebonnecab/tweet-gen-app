@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from generator import sentence_gen
+from helper import sentence_gen
 
 HTML="""<html><head><title>My App</title></head>
         <body><h2>{}</h2></body>"""

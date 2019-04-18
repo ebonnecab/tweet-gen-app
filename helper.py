@@ -1,9 +1,7 @@
-from histogram import histogram
-from histogram import histogram
-from histogram import get_words
-from histogram import listogram
+from word_count import histogram
+from word_count import get_words
 from sample import sample
-from rearrange import sentence_maker
+from sentence import sentence_maker
 
 def sentence_gen():
     histo_text = get_words('siddhartha.txt')
