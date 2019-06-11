@@ -12,5 +12,5 @@ def get_words(file):
     return words_list
 
 if __name__ == '__main__':
-    histo_text = get_words('siddhartha.txt')
+    histo_text = get_words('Alice_Wonder.txt')
     print(histo_text)
