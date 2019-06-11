@@ -88,7 +88,7 @@ def list_sampling(listogram):
 if __name__ == '__main__':
     
     #using histogram functions to get corpus
-    histo_text = get_words('siddhartha.txt')
+    histo_text = get_words('Alice_Wonder.txt')
     histo = histogram(histo_text)
     test = total_freq(histo)
     print(test)

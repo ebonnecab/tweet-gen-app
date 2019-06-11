@@ -4,7 +4,7 @@ from markov_chain import second_order_walk
 from markov_chain import second_order_sentence
 
 def sentence_gen():
-    histo_text = get_corpus('siddhartha.txt')
+    histo_text = get_corpus('Alice_Wonder.txt')
     random_words = second_order_walk(histo_text)
     random_sentence = second_order_sentence(random_words)
     return random_sentence

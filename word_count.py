@@ -30,7 +30,7 @@ def frequency(word, histogram):
 
 
 if __name__ == '__main__':
-    histo_text = get_words('siddhartha.txt')
+    histo_text = get_words('Alice_Wonder.txt')
     histo = histogram(histo_text)
     print(histo)
  
